@@ -11,6 +11,11 @@ server via [`.mcp.json`](.mcp.json). It lets Claude control and inspect a live
 Chrome browser — navigate pages, click/fill, capture screenshots, read the DOM
 and console, run performance traces, and inspect network requests.
 
+It is configured with `--isolated=true`, so each run uses a fresh temporary
+profile that is cleaned up on exit — it never touches your day-to-day Chrome
+profile. Drop that flag from `.mcp.json` if you'd rather reuse your real profile
+(e.g. to stay logged in to sites).
+
 **Requirements**
 
 - Node.js LTS (the server runs via `npx`)
